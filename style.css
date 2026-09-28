@@ -1,43 +1,63 @@
-:root{
-    --cor-fundo: #01080E ;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333; 
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
-
-}
-
+/* Configuração geral do site */
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.caixa-principal{
-    background-color: var(--cor-principal);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
+    background-color: #0B0314; /* Fundo roxo extremamente escuro (quase preto) */
+    color: #E0DBEC;            /* Texto claro com leve tom arroxeado para não cansar a vista */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
     padding: 20px;
 }
 
-h1{
-    color: var(--cor-destaque);
+/* Títulos principais (Efeito de Brilho Neon) */
+h1, h2 {
+    color: #6F2DBD;            /* Roxo Elétrico */
+    text-shadow: 0 0 10px #6F2DBD, 0 0 20px #B5179E; /* Brilho neon roxo e rosa */
 }
 
-button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    transition: background-color 0.3s;
+/* Subtítulos ou textos secundários */
+h3, strong {
+    color: #00F5D4;            /* Verde Turquesa Neon (O contraste perfeito) */
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
 }
 
-button:hover{
-    background-color: var(--cor-destaque);
+/* Links do site */
+a {
+    color: #00F5D4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #B5179E;            /* Muda para rosa neon ao passar o mouse */
+    text-shadow: 0 0 10px #B5179E;
+}
+
+/* Elementos de destaque (como Caixas, Cards ou Seções) */
+.card, .secao {
+    background-color: #160926; /* Roxo intermediário para destacar do fundo */
+    border: 1px solid #6F2DBD; /* Borda roxa fina */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(111, 45, 189, 0.2); /* Sombra roxa suave */
+}
+
+/* Botões Estilo Neon */
+button, .botao {
+    background-color: transparent;
+    color: #00F5D4;
+    border: 2px solid #00F5D4;
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover, .botao:hover {
+    background-color: #00F5D4;
+    color: #0B0314;            /* Inverte a cor do texto para o fundo escuro */
+    box-shadow: 0 0 20px #00F5D4, 0 0 40px #00F5D4; /* Brilho neon intenso */
+}
     color: var(--cor-principal);
 }
