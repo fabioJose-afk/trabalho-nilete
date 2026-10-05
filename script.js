@@ -6,80 +6,55 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Qual é a capital da Austrália?",
         alternativas: [
-            {
-                texto: "Isso é assustador!",
-                afirmacao: "afirmacao"
-            },
-            {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "afirmacao"
-            }           
-            
+            { texto: "Sydney", correta: false },
+            { texto: "Camberra", correta: true },
+            { texto: "Melbourne", correta: false },
+            { texto: "Brisbane", correta: false }
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
+        enunciado: "Qual é o planeta mais quente do Sistema Solar?",
         alternativas: [
-            {
-                texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:"afirmacao"
-            }
+            { texto: "Mercúrio", correta: false },
+            { texto: "Marte", correta: false },
+            { texto: "Vênus", correta: true },
+            { texto: "Júpiter", correta: false }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Qual organela celular é conhecida como a 'central de energia' da célula, responsável pela produção de ATP?",
         alternativas: [
-            {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
-            }
-            
+            { texto: "Mitocôndria", correta: true },
+            { texto: "Ribossomo", correta: false },
+            { texto: "Complexo de Golgi", correta: false },
+            { texto: "Lisossomo", correta: false }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Quem pintou a famosa obra pós-impressionista 'A Noite Estrelada' em 1889?",
         alternativas: [
-            {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao:"afirmacao"
-            }
-            
+            { texto: "Claude Monet", correta: false },
+            { texto: "Vincent van Gogh", correta: true },
+            { texto: "Pablo Picasso", correta: false },
+            { texto: "Salvador Dalí", correta: false }
         ]
     },
     {
-        enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "A Guerra do Peloponeso foi um conflito travado na Grécia Antiga entre quais duas principais cidades-estado?",
         alternativas: [
-            {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao:"afirmacao"
-            },
-            {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"afirmacao"
-            }
-            
-            
+            { texto: "Atenas e Esparta", correta: true },
+            { texto: "Esparta e Troia", correta: false },
+            { texto: "Roma e Cartago", correta: false },
+            { texto: "Tebas e Corinto", correta: false }
         ]
-    },
+    }
 ];
 
 let atual = 0; 
 let perguntaAtual;
-let historiaFinal = "";
+let acertos = 0;
 
 function mostraPergunta() {
     if(atual >= perguntas.length){
@@ -102,16 +77,29 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+    if(opcaoSelecionada.correta) {
+        acertos++;
+    }
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
+    caixaPerguntas.textContent = "Fim do Quiz!";
+    textoResultado.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
     caixaAlternativas.textContent = ""; 
+    
+    // Cria um botão para reiniciar o quiz
+    const botaoReiniciar = document.createElement("button");
+    botaoReiniciar.textContent = "Jogar Novamente";
+    botaoReiniciar.style.marginTop = "20px";
+    botaoReiniciar.addEventListener("click", () => {
+        atual = 0;
+        acertos = 0;
+        textoResultado.textContent = "";
+        mostraPergunta();
+    });
+    caixaAlternativas.appendChild(botaoReiniciar);
 }
 
 mostraPergunta();
