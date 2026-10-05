@@ -24,7 +24,7 @@ const perguntas = [
         ]
     },
     {
-        enunciado: "Qual organela celular é conhecida como a 'central de energia' da célula, responsável pela produção de ATP?",
+        enunciado: "Qual organela celular é conhecida como a 'central de energia' da célula, responsável pela respiração celular e produção de ATP?",
         alternativas: [
             { texto: "Mitocôndria", correta: true },
             { texto: "Ribossomo", correta: false },
@@ -42,7 +42,7 @@ const perguntas = [
         ]
     },
     {
-        enunciado: "A Guerra do Peloponeso foi um conflito travado na Grécia Antiga entre quais duas principais cidades-estado?",
+        enunciado: "A Guerra do Peloponeso foi um conflito bélico travado na Grécia Antiga entre quais duas principais cidades-estado rivais?",
         alternativas: [
             { texto: "Atenas e Esparta", correta: true },
             { texto: "Esparta e Troia", correta: false },
@@ -103,3 +103,4 @@ function mostraResultado(){
 }
 
 mostraPergunta();
+
