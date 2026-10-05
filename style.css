@@ -1,63 +1,85 @@
 /* Configuração geral do site */
 body {
-    background-color: #0B0314; /* Fundo roxo extremamente escuro (quase preto) */
-    color: #E0DBEC;            /* Texto claro com leve tom arroxeado para não cansar a vista */
+    background-color: #0B0314; /* Fundo roxo extremamente escuro */
+    color: #E0DBEC;            /* Texto claro com leve tom arroxeado */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-/* Títulos principais (Efeito de Brilho Neon) */
-h1, h2 {
-    color: #6F2DBD;            /* Roxo Elétrico */
-    text-shadow: 0 0 10px #6F2DBD, 0 0 20px #B5179E; /* Brilho neon roxo e rosa */
-}
-
-/* Subtítulos ou textos secundários */
-h3, strong {
-    color: #00F5D4;            /* Verde Turquesa Neon (O contraste perfeito) */
-    text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
-}
-
-/* Links do site */
-a {
-    color: #00F5D4;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #B5179E;            /* Muda para rosa neon ao passar o mouse */
-    text-shadow: 0 0 10px #B5179E;
-}
-
-/* Elementos de destaque (como Caixas, Cards ou Seções) */
-.card, .secao {
-    background-color: #160926; /* Roxo intermediário para destacar do fundo */
+/* Contêiner Principal do Quiz */
+.caixa-principal {
+    background-color: #160926; /* Roxo intermediário */
     border: 1px solid #6F2DBD; /* Borda roxa fina */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(111, 45, 189, 0.2); /* Sombra roxa suave */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(111, 45, 189, 0.25);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
 }
 
-/* Botões Estilo Neon */
-button, .botao {
+/* Título Principal (Efeito Neon) */
+h1 {
+    color: #6F2DBD;            
+    text-shadow: 0 0 10px #6F2DBD, 0 0 20px #B5179E; 
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+/* Caixa de texto das Perguntas */
+.caixa-perguntas {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    min-height: 70px;
+}
+
+/* Contêiner das Alternativas */
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Botões das Alternativas Estilo Neon */
+button {
     background-color: transparent;
     color: #00F5D4;
     border: 2px solid #00F5D4;
-    padding: 10px 25px;
+    padding: 14px 20px;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 245, 212, 0.2);
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.1);
+    text-align: center;
 }
 
 /* Efeito ao passar o mouse no botão */
-button:hover, .botao:hover {
+button:hover {
     background-color: #00F5D4;
     color: #0B0314;            /* Inverte a cor do texto para o fundo escuro */
-    box-shadow: 0 0 20px #00F5D4, 0 0 40px #00F5D4; /* Brilho neon intenso */
+    box-shadow: 0 0 15px #00F5D4, 0 0 30px #00F5D4; 
 }
-    color: var(--cor-principal);
+
+/* Caixa e Texto de Resultado Final */
+.caixa-resultado {
+    margin-top: 15px;
 }
+
+.texto-resultado {
+    color: #B5179E;            /* Rosa Neon para destacar o resultado */
+    text-shadow: 0 0 8px rgba(181, 23, 158, 0.5);
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
