@@ -63,7 +63,7 @@ const perguntas = [
     {
         enunciado: "A grande maioria dos computadores modernos do mundo funciona usando o sistema binário (0 e 1). O que os cientistas usam como unidade básica nos computadores quânticos para processar dados?",
         alternativas: [
-            { texto: "Nanobytes", correta: false },
+            { texto: "Nanabytes", correta: false },
             { texto: "Qubits (Bits quânticos)", correta: true },
             { texto: "Fótons estáticos", correta: false },
             { texto: "Microchips de silício linear", correta: false }
@@ -110,7 +110,7 @@ function mostraPergunta() {
     }
     bloqueado = false;
     perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = `${atual + 1}. ${perguntaAtual.enunciado}`; // Adiciona o número da pergunta na tela
+    caixaPerguntas.textContent = `${atual + 1}. ${perguntaAtual.enunciado}`;
     caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
@@ -135,7 +135,6 @@ function respostaSelecionada(opcaoSelecionada, botaoClicado) {
     } else {
         botaoClicado.classList.add("errada"); 
         
-        // Revela a resposta certa para o jogador aprender
         Array.from(caixaAlternativas.children).forEach(botao => {
             const textoBotao = botao.textContent;
             const alternativaOriginal = perguntaAtual.alternativas.find(a => a.texto === textoBotao);
@@ -145,14 +144,13 @@ function respostaSelecionada(opcaoSelecionada, botaoClicado) {
         });
     }
     
-    // Aguarda 1,5 segundos antes de mudar de pergunta
     setTimeout(() => {
         atual++;
         mostraPergunta();
     }, 1500);
 }
 
-function mostraResultado()){
+function mostraResultado(){ // Corrigido aqui!
     caixaPerguntas.textContent = "Quiz Concluído! 🧠";
     
     let mensagemCustomizada = "";
