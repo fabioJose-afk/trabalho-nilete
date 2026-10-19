@@ -1,85 +1,87 @@
-/* Configuração geral do site */
 body {
-    background-color: #0B0314; /* Fundo roxo extremamente escuro */
-    color: #E0DBEC;            /* Texto claro com leve tom arroxeado */
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: #f8fafc;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Contêiner Principal do Quiz */
 .caixa-principal {
-    background-color: #160926; /* Roxo intermediário */
-    border: 1px solid #6F2DBD; /* Borda roxa fina */
-    border-radius: 12px;
+    background-color: #1e293b;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     padding: 30px;
-    box-shadow: 0 4px 25px rgba(111, 45, 189, 0.25);
-    width: 100%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 550px;
     text-align: center;
 }
 
-/* Título Principal (Efeito Neon) */
-h1 {
-    color: #6F2DBD;            
-    text-shadow: 0 0 10px #6F2DBD, 0 0 20px #B5179E; 
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-}
-
-/* Caixa de texto das Perguntas */
 .caixa-perguntas {
     font-size: 1.25rem;
-    line-height: 1.6;
+    font-weight: 600;
     margin-bottom: 25px;
-    min-height: 70px;
+    line-height: 1.5;
 }
 
-/* Contêiner das Alternativas */
 .caixa-alternativas {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 20px;
 }
 
-/* Botões das Alternativas Estilo Neon */
-button {
-    background-color: transparent;
-    color: #00F5D4;
-    border: 2px solid #00F5D4;
+.botao-resposta, .botao-reiniciar {
+    background-color: #334155;
+    color: #f8fafc;
+    border: 2px solid transparent;
+    border-radius: 8px;
     padding: 14px 20px;
     font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 245, 212, 0.1);
+    transition: all 0.2s ease-in-out;
+    text-align: left;
+}
+
+.botao-resposta:hover {
+    background-color: #475569;
+    transform: translateY(-2px);
+}
+
+.botao-resposta.correta {
+    background-color: #16a34a !important;
+    border-color: #22c55e;
+    color: #ffffff;
+}
+
+.botao-resposta.errada {
+    background-color: #dc2626 !important;
+    border-color: #ef4444;
+    color: #ffffff;
+}
+
+.botao-reiniciar {
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+    font-weight: bold;
     text-align: center;
+    margin-top: 20px;
+    width: 100%;
 }
 
-/* Efeito ao passar o mouse no botão */
-button:hover {
-    background-color: #00F5D4;
-    color: #0B0314;            /* Inverte a cor do texto para o fundo escuro */
-    box-shadow: 0 0 15px #00F5D4, 0 0 30px #00F5D4; 
+.botao-reiniciar:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
 }
 
-/* Caixa e Texto de Resultado Final */
+/* Garante o destaque correto do texto final */
 .caixa-resultado {
     margin-top: 15px;
 }
 
 .texto-resultado {
-    color: #B5179E;            /* Rosa Neon para destacar o resultado */
-    text-shadow: 0 0 8px rgba(181, 23, 158, 0.5);
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.25rem;
+    color: #f8fafc;
     line-height: 1.6;
 }
 
