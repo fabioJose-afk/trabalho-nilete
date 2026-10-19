@@ -81,6 +81,9 @@ function respostaSelecionada(opcaoSelecionada) {
     historiaFinal += afirmacoes + " ";
     if (opcaoSelecionada.proxima != undefined) {
         atual = opcaoSelecionada.proxima;
+    } else {
+        mostraResultado();
+        return;
     }
     mostraPergunta();
 }
