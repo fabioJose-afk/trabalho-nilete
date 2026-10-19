@@ -76,14 +76,14 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    if(opcaoSelecionada.correta) {
-        acertos++;
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    if (opcaoSelecionada.proxima != undefined) {
+        atual = opcaoSelecionada.proxima;
     }
-    atual++;
     mostraPergunta();
 }
-
 function mostraResultado(){
     caixaPerguntas.textContent = "Fim do Quiz!";
     textoResultado.textContent = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
